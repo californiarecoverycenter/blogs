@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>California Recovery Center — Blog</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div>
+        <h1 class="site-title">California Recovery Center</h1>
+        <p class="lead">News, stories, and recovery resources from our team.</p>
+      </div>
+      <nav aria-label="Primary">
+        <a href="/" class="meta">Home</a>
+      </nav>
+    </header>
+
+    <div class="search" role="search" aria-label="Search blog posts">
+      <input type="search" placeholder="Search posts…" id="search" />
+    </div>
+
+    <main class="posts" id="posts">
+      <article class="post" data-title="Welcome to our blog" data-excerpt="A short welcome post to introduce the blog.">
+        <h2><a href="/posts/welcome.html" class="read-more">Welcome to our blog</a></h2>
+        <p class="meta">By California Recovery Center — 2026-07-20</p>
+        <p>A short welcome post to introduce the blog and what readers can expect from our updates.</p>
+        <a class="read-more" href="/posts/welcome.html">Read more →</a>
+      </article>
+    </main>
+
+    <footer class="footer">
+      © California Recovery Center — <span id="year">2026</span>
+    </footer>
+  </div>
+
+  <script>
+    // Minimal client-side search (filters by title/excerpt)
+    const input = document.getElementById('search');
+    const posts = Array.from(document.querySelectorAll('.post'));
+    input.addEventListener('input', () => {
+      const q = input.value.trim().toLowerCase();
+      posts.forEach(p => {
+        const title = p.dataset.title.toLowerCase();
+        const excerpt = p.dataset.excerpt.toLowerCase();
+        p.style.display = (q === '' || title.includes(q) || excerpt.includes(q)) ? '' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
