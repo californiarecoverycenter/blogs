@@ -1,0 +1,43 @@
+/* Simple blog styles for californiarecoverycenter/blogs
+   - Responsive, accessible, and easy to edit
+*/
+:root{
+  --bg:#f7f7fb;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --accent:#2563eb;
+  --max-width:900px;
+}
+*{box-sizing:border-box}
+body{
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:#111827;
+  margin:0;
+  padding:24px;
+  -webkit-font-smoothing:antialiased;
+}
+.container{
+  max-width:var(--max-width);
+  margin:0 auto;
+}
+.header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.site-title{font-size:1.5rem;font-weight:700;margin:0}
+.lead{color:var(--muted);margin-top:6px}
+.search{margin-top:18px}
+.search input{width:100%;padding:10px 12px;border-radius:8px;border:1px solid #e6e9ef;background:white}
+.posts{display:grid;grid-template-columns:1fr;gap:16px;margin-top:20px}
+.post{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 1px 2px rgba(16,24,40,0.04);border:1px solid rgba(15,23,42,0.03)}
+.post h2{margin:0 0 8px 0;font-size:1.125rem}
+.post p{margin:0 0 10px 0;color:var(--muted)}
+.meta{font-size:0.9rem;color:var(--muted)}
+a.read-more{color:var(--accent);text-decoration:none;font-weight:600}
+.footer{color:var(--muted);margin-top:34px;font-size:0.9rem}
+@media(min-width:700px){
+  .posts{grid-template-columns:repeat(2,1fr)}
+}
